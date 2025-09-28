@@ -8,13 +8,15 @@ interface Props {
   children: React.ReactNode;
   sx?: SxProps<Theme>;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-export const Button = ({ color, variant, children, sx, onClick }: Props) => {
+export const Button = ({ color, variant, children, sx, onClick, disabled }: Props) => {
   return (
     <MuiButton
       onClick={onClick}
       variant={variant}
+      disabled={disabled}
       sx={{
         background: variant !== "outlined" ? color : null,
         color: variant === "outlined" ? color : "auto",
